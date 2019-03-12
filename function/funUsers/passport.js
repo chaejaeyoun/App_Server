@@ -48,7 +48,7 @@ passport.use('local', new LocalStrategy({
           return done(null, false, req.flash('message','Invalid userid.'));
         }
 
-        if(!bcrypt.compareSync(password, rows[0].pw)){
+        if(!bcrypt.compareSync(password, rows[0].password)){
             console.log('*******  Invalid password.');
             return done(null, false, req.flash('message','Invalid password.'));
           }
